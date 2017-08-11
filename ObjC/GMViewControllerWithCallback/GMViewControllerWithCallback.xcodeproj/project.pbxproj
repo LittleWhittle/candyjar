@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F3510F71F3D7D5E0089CC7E /* ReadMe.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 3F3510F61F3D7D5E0089CC7E /* ReadMe.rtf */; };
 		3FB8C2F81F3ACAA8000E25E5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FB8C2F71F3ACAA8000E25E5 /* main.m */; };
 		3FB8C2FB1F3ACAA8000E25E5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FB8C2FA1F3ACAA8000E25E5 /* AppDelegate.m */; };
 		3FB8C2FE1F3ACAA8000E25E5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FB8C2FD1F3ACAA8000E25E5 /* ViewController.m */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3F3510F61F3D7D5E0089CC7E /* ReadMe.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = ReadMe.rtf; sourceTree = "<group>"; };
 		3FB8C2F31F3ACAA8000E25E5 /* GMViewControllerWithCallback.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GMViewControllerWithCallback.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FB8C2F71F3ACAA8000E25E5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3FB8C2F91F3ACAA8000E25E5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -61,6 +63,7 @@
 		3FB8C2F51F3ACAA8000E25E5 /* GMViewControllerWithCallback */ = {
 			isa = PBXGroup;
 			children = (
+				3F3510F61F3D7D5E0089CC7E /* ReadMe.rtf */,
 				3FB8C2F91F3ACAA8000E25E5 /* AppDelegate.h */,
 				3FB8C2FA1F3ACAA8000E25E5 /* AppDelegate.m */,
 				3FB8C2FC1F3ACAA8000E25E5 /* ViewController.h */,
@@ -144,6 +147,7 @@
 			files = (
 				3FB8C3061F3ACAA8000E25E5 /* LaunchScreen.storyboard in Resources */,
 				3FB8C3031F3ACAA8000E25E5 /* Assets.xcassets in Resources */,
+				3F3510F71F3D7D5E0089CC7E /* ReadMe.rtf in Resources */,
 				3FB8C3011F3ACAA8000E25E5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -317,6 +321,7 @@
 				3FB8C30C1F3ACAA8000E25E5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
