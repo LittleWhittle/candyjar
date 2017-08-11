@@ -47,7 +47,7 @@
     NSLog(@"Cancel");
     [self dismissViewControllerAnimated:YES completion:^{
         NSLog(@"Oops! Dismissed from GMViewController");
-        self.completion(@"Your Product will be delivered on Aug 10th !!! 😊");
+        self.completion(@"Hello Mr.Happy will see you soon.!!! 😊");
     }];
 }
 
