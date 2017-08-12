@@ -37,6 +37,7 @@
     self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
     // You need to set this to design and use self sized cell. Its nothing but build custom cell with your desired custom views. Make sure you setup proper constraints adjust your layout based on content.
+    // NOTE: You must create a custom Tableview cell either from code or from xib to use this feature.
     self.tableView.estimatedRowHeight = 90;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
 }
