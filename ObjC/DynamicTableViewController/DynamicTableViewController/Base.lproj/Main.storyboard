@@ -75,6 +75,28 @@
                                     </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DTSelfSizeIdentifier" rowHeight="90" id="f2k-cM-V4R">
+                                <rect key="frame" x="0.0" y="100" width="375" height="90"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="30" contentMode="center" tableViewCell="f2k-cM-V4R" id="G6S-Zk-RUp">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Content" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r95-M2-OWy">
+                                            <rect key="frame" x="28" y="16" width="319" height="57.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottomMargin" secondItem="r95-M2-OWy" secondAttribute="bottom" constant="8" id="4ng-mf-nej"/>
+                                        <constraint firstItem="r95-M2-OWy" firstAttribute="leading" secondItem="G6S-Zk-RUp" secondAttribute="leadingMargin" constant="20" id="Ne9-DI-WGP"/>
+                                        <constraint firstItem="r95-M2-OWy" firstAttribute="top" secondItem="G6S-Zk-RUp" secondAttribute="topMargin" constant="8" id="Oal-As-DAp"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="r95-M2-OWy" secondAttribute="trailing" constant="20" id="Pnp-SR-gVu"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="UFO-zo-R4L" id="Fna-MS-47s"/>
@@ -85,7 +107,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jnv-oJ-u9c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1810" y="-278"/>
+            <point key="canvasLocation" x="1808.8" y="-278.41079460269867"/>
         </scene>
         <!--Whittle-->
         <scene sceneID="VlG-Ut-4Fc">

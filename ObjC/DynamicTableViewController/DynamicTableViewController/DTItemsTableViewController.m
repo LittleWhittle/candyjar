@@ -14,6 +14,7 @@
 @property(nonatomic, strong) NSArray<NSString *> * zeroSectionRows;
 @property(nonatomic, strong) NSArray<NSString *> * oneSectionRows;
 @property(nonatomic, strong) NSArray<NSString *> * twoSectionRows;
+@property(nonatomic, strong) NSArray<NSString *> * moreTextSectionRows;
 @end
 
 @implementation DTItemsTableViewController
@@ -26,12 +27,18 @@
     self.zeroSectionRows = @[@"ABC", @"DEF", @"GHJ"];
     self.oneSectionRows = @[@"123", @"456"];
     self.twoSectionRows = @[@"Ahhh", @"Oops", @"Crazy", @"Whisper", @"Murmur", @"Calm"];
-    self.sections = @[self.zeroSectionRows, self.oneSectionRows, self.twoSectionRows];
+    self.moreTextSectionRows = @[@"abcdefghijklmnopqrstwvxyz abcdefghijklmnopqrstwvxyz abcdefghijklmnopqrstwvxyz abcdefghijklmnopqrstwvxyz abcdefghijklmnopqrstwvxyz", @"09876543210987654321 0987654321 0987654321 0987654321 0987654321 0987654321 0987654321",
+                                 @"Well Lets have a fun. Its good to see you son. Wish you many more Happy returns of the day. Bro, Is this your car?. Yes, bro. Where did you buy this?. Bro I found this in last week. Alright, lets have some fun. I repeat this sentence. Please keep your mind and body in peaceful state. Talk to yourself and listen to your inner voice. "];
+    self.sections = @[self.zeroSectionRows, self.oneSectionRows, self.twoSectionRows, self.moreTextSectionRows];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-     self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    // You need to set this to design and use self sized cell. Its nothing but build custom cell with your desired custom views. Make sure you setup proper constraints adjust your layout based on content.
+    self.tableView.estimatedRowHeight = 90;
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -58,14 +65,33 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DTItemIdentifier" forIndexPath:indexPath];
+    NSArray * eachSection = [self.sections objectAtIndex:indexPath.section];
+    if (eachSection == self.moreTextSectionRows) {
+        return [self tableView:tableView detailCellForRowAtIndexPath:indexPath];
+    }
+    else {
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DTItemIdentifier" forIndexPath:indexPath];
+        NSString * detailText = [eachSection objectAtIndex:indexPath.row];
+        // Configure the cell...
+        cell.textLabel.text = [NSString stringWithFormat:@"Row %lu", (unsigned long)indexPath.row];
+        cell.detailTextLabel.text = detailText;
+        return cell;
+    }
+    
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView detailCellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *detailCell = [tableView dequeueReusableCellWithIdentifier:@"DTSelfSizeIdentifier" forIndexPath:indexPath];
     NSArray * eachSection = [self.sections objectAtIndex:indexPath.section];
     NSString * detailText = [eachSection objectAtIndex:indexPath.row];
+    UIView * customView = [detailCell.contentView viewWithTag:30];
+    UILabel * customLabel = [customView viewWithTag:0];
+    if (customLabel) {
+        customLabel.numberOfLines = 0;
+        customLabel.text = detailText;
+    }
     
-    // Configure the cell...
-    cell.textLabel.text = [NSString stringWithFormat:@"Row %lu", (unsigned long)indexPath.row];
-    cell.detailTextLabel.text = detailText;
-    return cell;
+    return detailCell;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
@@ -113,7 +139,11 @@
     return canEditRow;
 }
 
-
+//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+//    if ([self.sections objectAtIndex:indexPath.section] == self.zeroSectionRows) {
+//        
+//    }
+//}
 
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
