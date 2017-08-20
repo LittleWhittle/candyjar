@@ -1,2 +1,2 @@
 # candyjar
-Its my little sweat
+Its my little candyjar project. 
